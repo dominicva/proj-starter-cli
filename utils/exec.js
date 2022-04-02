@@ -5,7 +5,6 @@ import ora from 'ora';
 
 const exec = util.promisify(execSync);
 
-const { log } = console;
 const spinner = ora({ text: '' });
 
 const projectName = 'proj-start-cli';

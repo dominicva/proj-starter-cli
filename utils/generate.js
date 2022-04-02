@@ -3,12 +3,11 @@ import { constants } from 'fs';
 import { mkdir, copyFile, readdir } from 'fs/promises';
 import { cwd } from 'process';
 import { to } from 'await-to-js';
-import chalk from 'chalk';
 import getUserInput from './get_user_input.js';
 import { handleError } from './error.js';
 import execute from './exec.js';
+import { green as g, dim as d } from './colors.js';
 
-const { green: g, dim: d } = chalk;
 const { log } = console;
 
 const generate = async () => {
@@ -16,7 +15,7 @@ const generate = async () => {
 
   // determine correct file and dir paths to insert project
   const outDirPath = join(cwd(), outDir);
-  log(d(`\nCreating project directory in ${g(`./${outDir}`)}\n`));
+  log(d(`\nCreating project directory ${g(`${outDir}`)}\n`));
   await mkdir(outDirPath);
 
   const inDirPath = new URL('template', join(import.meta.url, '..')).pathname;
