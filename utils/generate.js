@@ -24,7 +24,8 @@ const generate = async () => {
     log(file);
     const srcPath = join(inDirPath, file);
     const destPath = join(outDirPath, file);
-    copyFile(srcPath, destPath);
+    const [err] = await copyFile(srcPath, destPath, constants.COPYFILE_EXCL);
+    err && handleError('COPYING FILES FAILED', err);
   }
 };
 
