@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
 import welcome from './utils/welcome.js';
-import handleErrors from './utils/error.js';
-
+import init from './utils/init.js';
 (() => {
-  handleErrors();
+  init();
 
-  welcome();
+  // welcome();
 })();

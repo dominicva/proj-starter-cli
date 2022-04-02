@@ -2,6 +2,10 @@
   "name": "proj-starter-cli",
   "version": "1.0.0",
   "description": "",
+  "bin": {
+    "proj-starter-cli": "index.js",
+    "proj": "index.js"
+  },
   "main": "index.js",
   "type": "module",
   "scripts": {
