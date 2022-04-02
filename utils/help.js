@@ -22,6 +22,7 @@ ${orange('help')}    Print help info
 ${bgBlue(`${whiteBold(' Options ')}`)}
 
 ${blue('-v, --version')}    Print CLI version
+${blue('-c, --clear')}    Clear the console
 
 `;
 

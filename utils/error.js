@@ -41,8 +41,8 @@ export const handleError = (
   }
 };
 
-export const handleUnhandled = () => {
+export const handleUnhandled = ({ show = true } = {}) => {
   process.on('unhandledRejection', err => {
-    handleError(`UNHANDLED ERROR`, err);
+    handleError(`UNHANDLED ERROR`, err, show);
   });
 };

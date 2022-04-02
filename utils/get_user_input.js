@@ -16,7 +16,7 @@ const getUserInput = async () => {
       },
     ]);
   } catch (error) {
-    handleUnhandled('ERROR GETTING USER INPUT', error, true, true);
+    handleUnhandled({ show: false });
   }
 };
 
