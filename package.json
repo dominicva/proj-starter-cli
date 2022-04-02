@@ -23,7 +23,8 @@
     "chalk": "^5.0.1",
     "enquirer": "^2.3.6",
     "log-symbols": "^5.1.0",
-    "meow": "^10.1.2"
+    "meow": "^10.1.2",
+    "ora": "^6.1.0"
   },
   "devDependencies": {
     "prettier": "^2.6.1"

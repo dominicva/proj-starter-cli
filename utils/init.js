@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 import welcome from './welcome.js';
-import handleErrors from './error.js';
+import { handleError } from './error.js';
 
 const filePath = new URL('./../package.json', import.meta.url);
 const { description, version } = await readFile(filePath).then(json =>
@@ -8,7 +8,7 @@ const { description, version } = await readFile(filePath).then(json =>
 );
 
 const init = ({ clear = true } = {}) => {
-  handleErrors();
+  handleError();
 
   welcome({
     title: 'proj-starter-cli',

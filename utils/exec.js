@@ -1,31 +1,39 @@
 import { exec as execSync } from 'child_process';
+import { chdir } from 'process';
 import util from 'util';
-
-const { log } = console;
+import ora from 'ora';
 
 const exec = util.promisify(execSync);
+
+const { log } = console;
+const spinner = ora({ text: '' });
 
 const projectName = 'proj-start-cli';
 
 const commands = [
   'git init',
   'npm init -y',
-  'npm i node-fetch',
   'npm i -D prettier',
   `echo "# ${projectName}" >> readme.md`,
-  'echo "node_modules/\n/node_modules/\n**.DS_Store" >> .gitignore',
-  `echo "{ \\"singleQuote\\": true }" >> .prettierrc`,
   'git add .',
   'git commit -m "Chore: first commit"',
   'git branch -M main',
 ];
 
-async function exec() {
-  for (const command of commands) {
-    const { stdout, stderr } = await exec(command);
-    log('stdout', stdout);
-    log('stderr', stderr);
+async function execute(dir) {
+  spinner.start(`DEPENDENCIES INSTALLING...\n\nIt may take a moment...`);
+
+  chdir(dir);
+
+  try {
+    for (const command of commands) {
+      await exec(command);
+    }
+    spinner.succeed('DEPENDENCIES installed!');
+  } catch (error) {
+    console.error(error);
+    spinner.stop();
   }
 }
 
-export default exec;
+export default execute;
