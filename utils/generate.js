@@ -19,19 +19,18 @@ const generate = async () => {
   await mkdir(outDirPath);
 
   const inDirPath = new URL('template', join(import.meta.url, '..')).pathname;
-  const [err, files] = await to(readdir(inDirPath));
-
-  err && handleError('READDIR FAILED', err);
+  const [readErr, files] = await to(readdir(inDirPath));
+  readErr && handleError('READDIR FAILED', readErr);
 
   log(d(`\nCreating files in ${g(`./${outDir}`)} directory\n`));
 
   for (const file of files) {
     const srcPath = join(inDirPath, file);
     const destPath = join(outDirPath, file);
-    const [err] = await to(
+    const [copyErr] = await to(
       copyFile(srcPath, destPath, constants.COPYFILE_EXCL)
     );
-    err && handleError('COPYING FILES FAILED', err);
+    copyErr && handleError('COPYING FILES FAILED', copyErr);
     log(`${g('CREATED')} ${file}`);
   }
 
