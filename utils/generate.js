@@ -36,7 +36,7 @@ const generate = async () => {
 
   log();
 
-  await execute(outDirPath);
+  await execute(outDirPath, outDir);
 };
 
 export default generate;

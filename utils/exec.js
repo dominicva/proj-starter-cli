@@ -7,19 +7,16 @@ const exec = util.promisify(execSync);
 
 const spinner = ora({ text: '' });
 
-const projectName = 'proj-start-cli';
-
-const commands = [
-  'git init',
-  'npm init -y',
-  'npm i -D prettier',
-  `echo "# ${projectName}" >> readme.md`,
-  'git add .',
-  'git commit -m "Chore: first commit"',
-  'git branch -M main',
-];
-
-async function execute(dir) {
+async function execute(dir, projectName) {
+  const commands = [
+    'git init',
+    'npm init -y',
+    'npm i -D prettier',
+    `echo "# ${projectName}" >> readme.md`,
+    'git add .',
+    'git commit -m "Chore: first commit"',
+    'git branch -M main',
+  ];
   spinner.start(`DEPENDENCIES INSTALLING...\n\nIt may take a moment...`);
 
   chdir(dir);
