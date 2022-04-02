@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 
-import welcome from './utils/welcome.js';
 import init from './utils/init.js';
-(() => {
-  init();
+import cli from './utils/cli.js';
 
-  // welcome();
+const { input, showHelp } = cli;
+
+(() => {
+  input.includes('help') && showHelp(0);
+
+  init({ clear: false });
 })();

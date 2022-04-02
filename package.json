@@ -1,7 +1,7 @@
 {
   "name": "proj-starter-cli",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "CLI to generate project starter repo",
   "bin": {
     "proj-starter-cli": "index.js",
     "proj": "index.js"
@@ -12,13 +12,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Dominic van Almsick",
+    "email": "dominicvana@gmail.com",
+    "url": "https://github.com/dominicvana"
+  },
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.0.1",
     "log-symbols": "^5.1.0",
-    "meow": "^10.1.2",
-    "node-fetch": "^3.2.3"
+    "meow": "^10.1.2"
   },
   "devDependencies": {
     "prettier": "^2.6.1"
