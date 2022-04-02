@@ -17,7 +17,7 @@ const { log } = console;
  * @param {Boolean} displayError
  * @param {Boolean} exit
  */
-const handleError = (
+export const handleError = (
   heading = `ERROR: `,
   err,
   displayError = true,
@@ -41,10 +41,8 @@ const handleError = (
   }
 };
 
-const handleUnhandled = () => {
+export const handleUnhandled = () => {
   process.on('unhandledRejection', err => {
     handleError(`UNHANDLED ERROR`, err);
   });
 };
-
-export default handleUnhandled;

@@ -14,9 +14,13 @@ const flags = {
   },
 };
 
-const cli = meow(helpText, {
+const opts = {
   importMeta: import.meta,
-  ...flags,
-});
+  description: false,
+  hardRejection: false,
+  flags,
+};
+
+const cli = meow(helpText, opts);
 
 export default cli;

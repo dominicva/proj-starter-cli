@@ -19,7 +19,9 @@
   },
   "license": "ISC",
   "dependencies": {
+    "await-to-js": "^3.0.0",
     "chalk": "^5.0.1",
+    "enquirer": "^2.3.6",
     "log-symbols": "^5.1.0",
     "meow": "^10.1.2"
   },
