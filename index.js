@@ -6,7 +6,7 @@ import cli from './utils/cli.js';
 const { input, showHelp } = cli;
 
 (() => {
-  input.includes('help') && showHelp(0);
+  init({ clear: true });
 
-  init({ clear: false });
+  input.includes('help') && showHelp(0);
 })();
