@@ -1,7 +1,6 @@
 import sym from 'log-symbols';
-import chalk from 'chalk';
+import { red, yellow } from './colors.js';
 
-const { red, yellow } = chalk;
 const { log } = console;
 
 /**

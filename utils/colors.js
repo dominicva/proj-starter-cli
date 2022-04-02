@@ -7,4 +7,4 @@ export const [bgGrey, bgOrange, bgBlue] = hexCodes.map(code =>
 );
 export const [grey, orange, blue] = hexCodes.map(code => chalk.hex(code));
 export const whiteBold = chalk.white.bold;
-export const { green, dim } = chalk;
+export const { red, yellow, green, dim } = chalk;
